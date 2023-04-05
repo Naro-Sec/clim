@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+    <a href="/logout">Logout</a>
+
+    {% if result.error %}
+        <h2>Damn that error: {{ result.error.message }}</h2>
+    {% endif %}
+
+    {% if result.user %}
+        <h1>Hi {{ result.user.name }}</h1>
+        <h2>Your id is: {{ result.user.id }}</h2>
+        <h2>Your email is: {{ result.user.email }}</h2><br>
+
+        <h3> Do you want create, change or delete a record? </h3>
+        <form action="https://172.31.1.5:5000/dns/choose" method="POST">
+            <select name="choose" id="choose">
+                <option value="create">create</option>
+                <option value="change">change</option>
+                <option value="delete">delete</option>
+            </select>
+            <input type="submit" value="yes">
+        </form>
+
+    {% endif %}
+
+{% endblock body %}
+

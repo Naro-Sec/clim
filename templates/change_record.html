@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <h1> Type below the fqdn and ip-address to change the record: </h1>
+    <form action="https://172.31.1.5:5000/dns/changed" method="POST">
+        <label for="fqdn">FQDN:</label><br>
+        <input type="text" id="fqdn" name="fqdn"><br>
+        <label for="ip">IP-address:</label><br>
+        <input type="text" id="ip" name="ip"><br><br>
+        <input type="submit" value="Change" >
+    </form>
+
+{% endblock %}

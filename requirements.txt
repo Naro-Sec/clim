@@ -1,0 +1,8 @@
+flask
+flask_restful
+authomatic
+pymongo
+pymongo[srv]
+pyOpenSSL
+werkzeug==2.0.3
+dnspython
