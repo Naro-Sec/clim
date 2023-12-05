@@ -17,7 +17,6 @@ parser.add_argument("name")
 parser.add_argument("token")
 
 class DnsNew(Resource):
-    # curl http://172.31.1.5:5001/dns/new -d "name=Narek" -d "token=87da83fe-a7d5-11ec-a4ac-000c298d0891" -d "fqdn=narek.clim.test" -d "ip=0.0.0.0" -X POST
     def post(self):
         args = parser.parse_args()
         n = args['name']
@@ -31,7 +30,6 @@ class DnsNew(Resource):
         return {'status': "error"}
 
 class DnsName(Resource):
-    # curl http://172.31.1.5:5001/dns/name/narek.clim.test -d "name=Narek" -d "token=87da83fe-a7d5-11ec-a4ac-000c298d0891" -X DELETE
     def delete(self, fqdn):
         args = parser.parse_args()
         n = args["name"]
@@ -42,7 +40,6 @@ class DnsName(Resource):
 
         return {'status': 'error'}
 
-    # curl http://172.31.1.5:5001/dns/name/narek.clim.test -d "name=Narek" -d "token=87da83fe-a7d5-11ec-a4ac-000c298d0891" -d "ip=192.168.1.20" -X PUT
     def put(self, fqdn):
         args = parser.parse_args()
         n = args["name"]
@@ -54,7 +51,6 @@ class DnsName(Resource):
 
         return {'status': 'error'}
 
-    # curl http://172.31.1.5:5001/dns/name/narek.clim.test -d "name=Narek" -d "token=87da83fe-a7d5-11ec-a4ac-000c298d0891" -X GET
     def get(self, fqdn):
         args = parser.parse_args()
         n = args["name"]
